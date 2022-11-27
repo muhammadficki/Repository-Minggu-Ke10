@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kuis Buat Kalkulator</title>
+    <script>
+        function hitung(){
+            var form = document.formHitung;
+            var x = eval(form.bil1.value);
+            var y = eval(form.bil2.value);
+            var pil = form.opt.value;
+            var z = x+y;
+            document.write(`${x} + ${y} = ${z}<br/>`);
+            var z = x-y;
+            document.write(`${x} - ${y} = ${z}<br/>`);
+            var z = x*y;
+            document.write(`${x} * ${y} = ${z}<br/>`);
+            var z = x/y;
+            document.write(`${x} / ${y} = ${z}<br/>`);
+
+            if(pil=="+"){
+                var z = x+y;
+            }else if(pil=="-"){
+                var z = x-y;
+            }else if(pil=="*"){
+                var z = x*y;
+            }else if(pil=="/"){
+                var z =x/y;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Kuis JawaScript</h1>
+    <form name="formHitung">
+        bil 1 <input type="number" name="bil1"><br>
+        opr
+            <select name="opt">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select><br>
+        bil2 <input type="number" name="bil2"><br>
+        <input type="button" value="=" onclick="hitung()"><br>
+        <input type="number" name="hasil" disabled="true">
+    </form>
+    
+</body>
+</html>
